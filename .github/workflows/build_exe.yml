@@ -25,7 +25,7 @@ jobs:
       run: pyinstaller --onefile Cricket_Shop_beta.py
 
     - name: Upload EXE Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Cricket_Shop_beta_EXE
         path: dist/Cricket_Shop_beta.exe
