@@ -29,7 +29,8 @@ jobs:
           pyinstaller --onefile --collect-data pyfiglet Cricket_Shop_beta.py
 
       - name: Upload executable as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Cricket_Shop_Executable
           path: dist/Cricket_Shop_beta
+
