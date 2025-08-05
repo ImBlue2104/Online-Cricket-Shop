@@ -28,5 +28,13 @@ jobs:
         run: |
           pyinstaller --onefile --collect-data pyfiglet Cricket_Shop_beta.py
 
+      - name: Upload executable as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Cricket_Shop_Executable
+          path: dist/Cricket_Shop_beta
+
+          pyinstaller --onefile --collect-data pyfiglet Cricket_Shop_beta.py
+
       - name: List dist folder contents
         run: ls -la dist/
