@@ -3,7 +3,7 @@ name: Build Executable with PyInstaller
 on:
   push:
     branches:
-      - main
+      - main  # or your default branch
 
 jobs:
   build:
@@ -26,10 +26,11 @@ jobs:
 
       - name: Build executable with PyInstaller
         run: |
-          pyinstaller --onefile Cricket_Shop_Site/Cricket_Shop_beta.py
+          pyinstaller --onefile Cricket_Shop_beta.py
 
       - name: List dist folder contents
         run: ls -la dist/
 
       - name: Run the executable
         run: ./dist/Cricket_Shop_beta
+
