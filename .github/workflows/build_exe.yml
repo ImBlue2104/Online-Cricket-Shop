@@ -1,31 +1,26 @@
-name: Build Windows EXE
+name: Build Executable
 
 on:
   push:
-    paths:
-      - '**.py'
+    branches: [ main ]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.x'  # choose your Python version
 
-    - name: Install PyInstaller
-      run: pip install pyinstaller
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-    - name: Build EXE
-      run: pyinstaller --onefile Cricket_Shop_beta.py
-
-    - name: Upload EXE Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: Cricket_Shop_beta_EXE
-        path: dist/Cricket_Shop_beta.exe
+    - name: Run your build script
+      run: |
+        python your_build_script.py
