@@ -33,8 +33,3 @@ jobs:
         with:
           name: Cricket_Shop_Executable
           path: dist/Cricket_Shop_beta
-
-          pyinstaller --onefile --collect-data pyfiglet Cricket_Shop_beta.py
-
-      - name: List dist folder contents
-        run: ls -la dist/
