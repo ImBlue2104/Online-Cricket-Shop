@@ -30,7 +30,3 @@ jobs:
 
       - name: List dist folder contents
         run: ls -la dist/
-
-      - name: Run the executable
-        run: ./dist/Cricket_Shop_beta
-
